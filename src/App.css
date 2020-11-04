@@ -1,11 +1,52 @@
+body {
+  background: #4DB6AC;
+}
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.header {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: #131313 solid 1px;
+  justify-content: center;
+}
+.Col {
+  display: flex;
+  flex-direction: column;
+}
+.Col-margin {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+.center {
+  align-items: center;
+}
+.center-vertical {
+  justify-content: center;
+}
+.title {
+}
+.big-margin {
+  margin: 16px;
+}
+.normal-input {
+
+}
+
+.big-padding {
+  padding: 16px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

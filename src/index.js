@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AppEth2New from "./AppEth2New";
+import AppNew2Eth from "./AppNew2Eth";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.Fragment>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={ App }></Route>
+        <Route path="/eth2new" component={ AppEth2New }></Route>
+        <Route path="/new2eth" component={ AppNew2Eth }></Route>
+      </Switch>
+    </BrowserRouter>
+  </React.Fragment>,
   document.getElementById('root')
 );
 
