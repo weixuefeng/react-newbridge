@@ -1,6 +1,22 @@
 body {
   background: #4DB6AC;
 }
+.container {
+  padding: 16px;
+}
+.loading {
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center; /*让div内部文字居中*/
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
 .App {
   display: flex;
   flex-direction: column;
