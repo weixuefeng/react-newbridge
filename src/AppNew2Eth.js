@@ -21,7 +21,7 @@ class AppNew2Eth extends React.Component{
     this.showLoading()
     var address = this.state.address
     let host = process.env.END_POINT
-    let url = `${host}/newbridge/account?ethereum_recipient_address=${address}&direction=new2eth`
+    let url = `https://rpc1.newchain.newtonproject.org/newbridge/account?ethereum_recipient_address=${address}&direction=new2eth`
     axios({
       method: 'get',
       url: url,

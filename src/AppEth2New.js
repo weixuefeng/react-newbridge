@@ -32,7 +32,8 @@ class AppEth2New extends React.Component{
 
   getEthReceiptAddress() {
     let address = this.state.walletAddress;
-    let url = `${process.env.END_POINT}/newbridge/account?newchain_recipient_address=${address}&direction=eth2new`
+    console.log(process.env.END_POINT)
+    let url = `https://rpc1.newchain.newtonproject.org/newbridge/account?newchain_recipient_address=${address}&direction=eth2new`
     this.showLoading()
     axios({
       method: 'get',
