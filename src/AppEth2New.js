@@ -46,7 +46,7 @@ class AppEth2New extends React.Component{
         });
       }
     }).catch((error) => {
-      console.log(error)
+      alert(error);
     }).finally(() =>{
       this.hideLoading()
     })
@@ -72,8 +72,8 @@ class AppEth2New extends React.Component{
             <p>4. 将 Ethereum 上的资产打到二维码中的收币地址</p>
             <p>5. 检查自己的以太坊钱包，查看余额</p>
             <p>6. 确认 NewChain 的接受地址为:{this.state.walletAddress}</p>
-            <input className="big-margin" placeholder="请输入 NEW 接受地址" onChange={this.handleInputChange.bind(this)}/>
-            <button className="big-margin" onClick={this.getEthReceiptAddress.bind(this)}>确认</button>
+            <input className="big-margin big-padding" placeholder="请输入 NEW 接受地址" onChange={this.handleInputChange.bind(this)}/>
+            <button className="big-margin big-padding" onClick={this.getEthReceiptAddress.bind(this)}>确认</button>
             <QRCode className="big-margin" value={this.state.ethAddress} style={{ visibility: this.state.isShowQrCode ? 'visible' : 'hidden'}}/>
             <p>请转账到: {this.state.ethAddress}</p>
           </div>

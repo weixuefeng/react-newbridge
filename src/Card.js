@@ -8,17 +8,11 @@ class Card extends React.Component{
 
   render(){
     return (
-      <div className="Col center" style={{ marginTop: '20px'}}>
-        <div className="token-card text-center">
-        <a href={this.props.target}>
-        <div className="Col center center-vertical" style={{ height: '200px', width: '200px', margin: '10px'}}
-        >
-          <p>{this.props.name}</p>
-        </div>
-        </a>
-        </div>
+      <a className="Col center" href={this.props.target}>
+      <div className="token-card Col center-vertical center">
+          <p>{this.props.name} >></p>
       </div>
-
+      </a>
     )
   }
 }

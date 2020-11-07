@@ -35,6 +35,7 @@ class AppNew2Eth extends React.Component{
       }
     }).catch((error) => {
       console.log(error)
+      alert(error);
     }).finally(()=> {
       this.hideLoading()
     })
@@ -72,8 +73,8 @@ class AppNew2Eth extends React.Component{
             <p>3. 点击确认，获取在 NewChain 上的收币地址</p>
             <p>4. 将 NewChain 上的资产打到 NewChain 的收币地址</p>
             <p>5. 检查自己的以太坊钱包，查看余额，以太坊的接受地址为:{this.state.address}</p>
-            <input className="big-margin" placeholder="请输入ETH接受地址" onChange={this.handleInputChange.bind(this)}/>
-              <button className="big-margin" onClick={this.getNewReceiptAddress.bind(this)}>确认</button>
+            <input className="big-margin big-padding" placeholder="请输入ETH接受地址" onChange={this.handleInputChange.bind(this)}/>
+              <button className="big-margin big-padding" onClick={this.getNewReceiptAddress.bind(this)}>确认</button>
               <QRCode className="big-margin" value={this.state.newAddress} style={{ visibility: this.state.isShowQrCode ? 'visible' : 'hidden'}}/>
               <p>请转账到: {this.state.newAddress}</p>
           </div>
