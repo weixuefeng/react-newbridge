@@ -145,3 +145,24 @@ body {
   font-size: medium;
   line-height: 1em;
 }
+
+.table-wrapper {
+  border: #2c2c2c solid 1px;
+  margin-top: 10px;
+}
+.table-wrapper p {
+  border-bottom: #2c2c2c;
+  font-weight: bold;
+}
+
+.table {
+  border: #2c2c2c solid 0.5px;
+}
+.table td {
+  border-right: #282c34 solid 1px;
+  border-bottom: #282c34 solid 1px;
+}
+.table th {
+  border-right: #282c34 solid 1px;
+  border-bottom: #282c34 solid 1px;
+}
