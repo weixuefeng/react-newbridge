@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from "./Header";
 import QRCode from 'qrcode.react'
 import ReactLoading from 'react-loading';
+import ReactClipboard from "react-clipboardjs-copy";
 
 
 class AppEth2New extends React.Component{
@@ -76,6 +77,13 @@ class AppEth2New extends React.Component{
             <button className="big-margin big-padding" onClick={this.getEthReceiptAddress.bind(this)}>确认</button>
             <QRCode className="big-margin" value={this.state.ethAddress} style={{ visibility: this.state.isShowQrCode ? 'visible' : 'hidden'}}/>
             <p>请转账到: {this.state.ethAddress}</p>
+            <ReactClipboard
+              text={this.state.ethAddress}
+              onSuccess={(e)=> alert("复制成功")}
+              onError={(e) => alert(e)}
+            >
+              <button>Copy</button>
+            </ReactClipboard>
           </div>
         </div>
         <ReactLoading className="loading" style={{ visibility: this.state.loading ? 'visible': 'hidden'}}/>

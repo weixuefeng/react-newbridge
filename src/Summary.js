@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios";
-import {Table} from 'react-bootstrap'
 
 class Summary extends React.Component{
 
