@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Api from "./api/api";
 
 class Summary extends React.Component{
 
@@ -11,20 +12,13 @@ class Summary extends React.Component{
   }
 
   componentDidMount() {
-    console.log("get")
-    let url = `https://rpc1.newchain.newtonproject.org/newbridge/pairs`
-    axios({
-      method: 'get',
-      url: url,
-    }).then((response) => {
-      if(response.status === 200) {
-          this.setState({
-            pairs: response.data.pairs
+    Api.getInstance().getSupportPairs()
+      .then((response) => {
+        this.setState({
+            pairs: response.pairs
           }
         )
-        console.log(this.state.pairs)
-      }
-    }).catch((error) => {
+      }).catch((error) => {
       console.log(error)
       alert(error);
     }).finally(()=> {

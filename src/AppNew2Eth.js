@@ -1,11 +1,10 @@
 import './App.css';
 import React from "react";
-import axios from 'axios'
 import QRCode from 'qrcode.react'
 import Header from "./Header";
 import ReactLoading from 'react-loading';
 import ReactClipboard from 'react-clipboardjs-copy'
-
+import Api from "./api/api";
 
 class AppNew2Eth extends React.Component{
 
@@ -21,24 +20,16 @@ class AppNew2Eth extends React.Component{
 
   async getNewReceiptAddress() {
     this.showLoading()
-    var address = this.state.address
-    let host = process.env.END_POINT
-    let url = `https://rpc1.newchain.newtonproject.org/newbridge/account?ethereum_recipient_address=${address}&direction=new2eth`
-    axios({
-      method: 'get',
-      url: url,
-    }).then((response) => {
-      console.log(response.data.newchain_deposit_address);
-      if(response.status === 200) {
+    let address = this.state.address
+    Api.getInstance().getNewReChargeAddress(address)
+    .then((response) => {
         this.setState({
-          newAddress: response.data.newchain_deposit_address,
+          newAddress: response.newchain_deposit_address,
           isShowQrCode: true
         });
-      }
-    }).catch((error) => {
-      console.log(error)
-      alert(error);
-    }).finally(()=> {
+      }).catch(reason => {
+        alert(reason)
+    }).finally(() => {
       this.hideLoading()
     })
   }
